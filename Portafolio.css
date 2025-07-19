@@ -1,0 +1,231 @@
+:root {
+  --bg: #0d1117;
+  --text: #c9d1d9;
+  --accent: #58a6ff;
+  --card: #161b22;
+  --hover: #1f2937;
+  --border: #30363d;
+  --glow: 0 0 12px var(--accent);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0f1c, #111827);
+  box-shadow: var(--glow);
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+header p {
+  font-style: italic;
+  margin-top: 1rem;
+  color: #8b949e;
+  font-size: 1.1rem;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.fade-in.delay {
+  animation-delay: 0.5s;
+}
+
+section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow);
+}
+
+.skills-bar .bar {
+  background: var(--hover);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  height: 28px;
+}
+
+.skills-bar .bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+  padding-left: 1rem;
+  line-height: 28px;
+  white-space: nowrap;
+  transition: width 1s ease-in-out;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skills li {
+  background: var(--hover);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  gap: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.skills li i {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.skills li:hover {
+  background: #2c3746;
+  transform: scale(1.03);
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+footer {
+  background: var(--card);
+  padding: 2rem;
+  text-align: center;
+  color: #8b949e;
+  border-top: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.info-about-me {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.photo-container {
+  flex: 1 1 200px;
+  max-width: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--glow);
+  border: 2px solid var(--accent);
+}
+
+.photo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-container img:hover {
+  transform: scale(1.05);
+}
+
+.info-text {
+  flex: 2 1 400px;
+}
+
+.info-text h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.info-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-text ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+}
+
+.info-text ul li i {
+  color: var(--accent);
+  min-width: 18px;
+  text-align: center;
+}
